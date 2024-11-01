@@ -1,0 +1,32 @@
+{
+  "name": "Advanced Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "nestjs.nestjs-files",
+        "remix.remix",
+        "rbbit.typescript-hero",
+        "github.codespaces"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install -g turbo nodemon npm-run-all",
+  "updateContentCommand": "npm install && npm run all",
+  "forwardPorts": [3000, 3333],
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "remoteUser": "node"
+}

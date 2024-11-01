@@ -1,0 +1,1 @@
+{"root":["./tailwind.config.ts","./vite.config.ts","./app/entry.client.tsx","./app/entry.server.tsx","./app/root.tsx","./app/routes/_index.tsx"],"version":"5.6.3"}
