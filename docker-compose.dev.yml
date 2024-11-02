@@ -1,0 +1,13 @@
+services:
+  monorepo_dev:
+    environment:
+      - NODE_ENV
+
+    container_name: nrm-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # image: massdoc/nrm:dev
+    restart: always
+    ports:
+      - "3000:3000"
